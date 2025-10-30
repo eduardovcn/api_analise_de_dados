@@ -1,6 +1,9 @@
 from flask import Blueprint, request, jsonify, Response
 from pydantic import ValidationError
 from . import models
+from .schemas import AnaliseInput
+
+
 
 #Organização das rotas da API usando Blueprints do Flask
 bp = Blueprint('api_v1', __name__)
@@ -9,14 +12,13 @@ bp = Blueprint('api_v1', __name__)
 def analisar_dados():
 # Método do controlador para lidar com as requisições HTTP
 
-    # Criei uma variável para armazenar os dados brutos da requisição e valida-los
     raw_data = request.get_json()
     if not raw_data:
         return jsonify({"erro": "Dados de entrada ausentes."}), 400
     
     try:
-        # Validação dos dados de entrada usando Pydantic
-        input_data = models.AnaliseInput.model_validate(raw_data)
+        # Validação dos dados de entrada usando o Pydantic.
+        input_data = AnaliseInput.model_validate(raw_data)
 
     except ValidationError as e:
         #Se falhar, retorna Unprocessable Entity (status 422)
