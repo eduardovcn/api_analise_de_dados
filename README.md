@@ -70,3 +70,31 @@ Recebe uma lista de números e retorna suas estatísticas.
 {
   "dados": [10, 20, 30, 40, 50, 50, 60]
 }
+```
+**Response Body 200 - Sucesso:**
+```json
+{
+  "media": 37.142857142857146,
+  "mediana": 40.0,
+  "desvio_padrao": 17.13926868853112,
+  "quantidade": 7
+}
+```
+**Response Body 422 - Erro de validação:**
+```json
+[
+  {
+    "loc": [
+      "dados"
+    ],
+    "msg": "ensure this value has at least 1 items",
+    "type": "value_error.list.min_items",
+    "ctx": {
+      "limit_value": 1
+    }
+  }
+]
+```
+
+
+

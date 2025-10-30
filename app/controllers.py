@@ -30,6 +30,7 @@ def analisar_dados():
 
     return jsonify(resultado.model_dump()), 200  # Retorna o resultado como JSON
 
+# Verificação simples para checar se a API está rodando
 @bp.route('/health', methods=['GET'])
 def health_check():
     return jsonify({"status": "API de Análise de Dados está funcionando."}), 200
