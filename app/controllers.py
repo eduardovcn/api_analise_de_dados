@@ -4,7 +4,6 @@ from . import models
 from .schemas import AnaliseInput
 
 
-
 #Organização das rotas da API usando Blueprints do Flask
 bp = Blueprint('api_v1', __name__)
 

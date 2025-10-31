@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import List
 
+
 #DTOs (Data Transfer Objects). Definem a "forma" dos dados que entram e saem da API.
 
 class AnaliseInput(BaseModel):
