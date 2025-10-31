@@ -1,7 +1,7 @@
 import numpy as np
 from datetime import datetime, timezone
 from .schemas import AnaliseInput, ResultadoAnalise
-from . import db
+from .extensions import db
 
 
 # Definindo o ORM Model. 
